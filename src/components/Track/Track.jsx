@@ -1,8 +1,13 @@
 import React from "react";
+import "./Track.module.css";
 
-function Track(){
+function Track({track}){
+  const {name, artist,album} = track;
   return(
-    <div></div>
+    <div>
+      <h3>{name}</h3>
+      <p>{artist} | {album}</p>
+    </div>
   )
 }
 

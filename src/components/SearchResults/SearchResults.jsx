@@ -1,8 +1,13 @@
+import TrackList from '../TrackList/TrackList';
 import React from "react";
+import './SearchResults.module.css';
 
-function SearchResults(){
+function SearchResults({searchResults}){
   return(
-    <div></div>
+    <div>
+      <h2>Results</h2>
+      <TrackList tracks={searchResults}/>
+    </div>
   )
 }
 
