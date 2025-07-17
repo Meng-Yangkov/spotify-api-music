@@ -1,8 +1,13 @@
 import React from "react";
+import TrackList from "../TrackList/TrackList";
 
-function PlayList(){
+function PlayList({ playlistName, setPlaylistName, playlistTracks }){
   return(
-    <div></div>
+    <div>
+      <input value={playlistName} onChange={(e) => setPlaylistName(e.target.value)} />
+      <TrackList tracks={playlistTracks} />   
+      <button>Save to Sportify</button>
+    </div>
   )
 }
 
