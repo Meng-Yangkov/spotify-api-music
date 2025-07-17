@@ -2,7 +2,7 @@ import React from "react";
 import Track from '../Track/Track';
 import './TrackLists.module.css';
 
-function TrackList({ tracks = [], onAdd, isRemoval }) {
+function TrackList({ tracks = [], onAdd,onRemove, isRemoval }) {
   return (
     <div>
       {tracks.map(track => (
@@ -10,7 +10,8 @@ function TrackList({ tracks = [], onAdd, isRemoval }) {
           key={track.id}
           track={track}
           onAdd={onAdd}
-          isRemoval={isRemoval} // <-- use the prop, don't hardcode
+          onRemove={onRemove}
+          isRemoval={isRemoval}
         />
       ))}
     </div>
