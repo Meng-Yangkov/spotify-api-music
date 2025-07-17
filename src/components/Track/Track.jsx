@@ -1,24 +1,20 @@
-import React from "react";
-import "./Track.module.css";
+import React from 'react';
+import styles from './Track.module.css';
 
-function Track({ track, onAdd, isRemoval = false,onRemove }){
-  const {name, artist,album } = track;
+const Track = ({ track, onAdd, onRemove, isRemoval = false }) => {
+  const { name, artist, album } = track;
 
-  const handleAdd = () => {
-    onAdd(track);
-  };
-  const handleRemove = () => {
-    onRemove(track);
-  }
+  const handleAdd = () => onAdd(track);
+  const handleRemove = () => onRemove(track);
 
-  return(
+  return (
     <div>
       <h3>{name}</h3>
       <p>{artist} | {album}</p>
       {!isRemoval && <button onClick={handleAdd}>+</button>}
-      {isRemoval && <button onClick={handleRemove}>-</button>}
+      {isRemoval && <button onClick={handleRemove}>−</button>}
     </div>
-  )
-}
+  );
+};
 
 export default Track;

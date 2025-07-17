@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 import Track from '../Track/Track';
-import './TrackLists.module.css';
+import "./TrackLists.module.css";
 
-function TrackList({ tracks = [], onAdd,onRemove, isRemoval }) {
+const TrackList = ({ tracks = [], onAdd, onRemove, isRemoval }) => {
   return (
     <div>
       {tracks.map(track => (
@@ -16,7 +16,6 @@ function TrackList({ tracks = [], onAdd,onRemove, isRemoval }) {
       ))}
     </div>
   );
-}
-
+};
 
 export default TrackList;
