@@ -5,20 +5,7 @@ import PlayList from "../PlayList/PlayList";
 
 function App() {
   const [playlistName, setPlaylistName] = useState('My Playlist');
-  const [playlistTracks, setPlaylistTracks] = useState([
-    {
-      id: 10,
-      name: 'As It Was',
-      artist: 'Harry Styles',
-      album: 'Harry’s House',
-    },
-    {
-      id: 11,
-      name: 'Stay',
-      artist: 'The Kid LAROI & Justin Bieber',
-      album: 'Stay (Single)',
-    }
-  ]);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
   const [searchResults, setSearchResults] = useState([
     {
       id: 1,
@@ -40,10 +27,17 @@ function App() {
     }
   ]);
 
+  const addTrack = (track) => {
+    if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      return;
+    }
+    setPlaylistTracks(prevTracks => [...prevTracks, track]);
+  };
+
   return (
     <div>
       <h1>Jamming</h1>
-      <SearchResults searchResults={searchResults} />
+      <SearchResults searchResults={searchResults} onAdd={addTrack} />
       <PlayList
         playlistName={playlistName}
         setPlaylistName={setPlaylistName}
